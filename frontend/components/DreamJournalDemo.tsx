@@ -440,7 +440,7 @@ export const DreamJournalDemo = () => {
         {dreams.length === 0 ? (
           <div className="text-center py-12 text-gray-500">
             <p className="text-lg mb-2">No dreams yet</p>
-            <p className="text-sm">Create your first encrypted dream entry above!</p>
+            <p className="text-sm">Create your first homomorphically encrypted dream entry above!</p>
           </div>
         ) : (
           <div className="space-y-4">
