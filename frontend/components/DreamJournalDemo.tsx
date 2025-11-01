@@ -253,7 +253,7 @@ export const DreamJournalDemo = () => {
       <div className="mx-auto w-full max-w-2xl">
         <div className="bg-white rounded-lg shadow-lg p-8 text-center">
           <h2 className="text-3xl font-bold mb-4 text-gray-800">
-            Welcome to Dream Journal
+            Welcome to Encrypted Dream Journal
           </h2>
           <p className="text-gray-600 mb-8">
             Connect your Rainbow wallet to start recording your encrypted dreams.
