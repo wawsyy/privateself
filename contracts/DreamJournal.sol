@@ -7,6 +7,7 @@ import {SepoliaConfig} from "@fhevm/solidity/config/ZamaConfig.sol";
 /// @title DreamJournal - Encrypted Dream Journal Storage
 /// @notice Stores encrypted dream content using FHE. Only encrypted data is stored on-chain.
 /// @dev Dream text is encrypted as euint8[] (one byte per character)
+/// @dev This contract uses Zama's FHEVM for fully homomorphic encryption
 contract DreamJournal is SepoliaConfig {
     struct Dream {
         address owner;
