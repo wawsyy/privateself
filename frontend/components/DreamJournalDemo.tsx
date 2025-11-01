@@ -257,7 +257,7 @@ export const DreamJournalDemo = () => {
           </h2>
           <p className="text-gray-600 mb-8">
             Connect your Rainbow wallet to start recording your encrypted dreams.
-            Your dreams are encrypted on-chain and only you can decrypt them.
+            Your dreams are fully homomorphically encrypted on-chain and only you can decrypt them.
           </p>
           <div className="flex justify-center">
             <ConnectButton />
