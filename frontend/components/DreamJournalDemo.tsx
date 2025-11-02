@@ -409,7 +409,7 @@ export const DreamJournalDemo = () => {
               disabled={isCreating}
             />
             <p className="mt-1 text-xs text-gray-500">
-              Your dream content will be encrypted locally before being stored on-chain.
+              Your dream content will be fully homomorphically encrypted locally before being stored on-chain.
             </p>
           </div>
           <button
