@@ -95,6 +95,13 @@ contract DreamJournal is SepoliaConfig {
         return dream.encContent.length;
     }
 
+    /// @notice Check if a dream exists
+    /// @param id The dream ID
+    /// @return exists Whether the dream exists
+    function dreamExists(uint256 id) external view returns (bool exists) {
+        return _dreams[id].encContent.length > 0;
+    }
+
     /// @notice Get a single encrypted byte at a specific index
     /// @param id The dream ID
     /// @param index The byte index
