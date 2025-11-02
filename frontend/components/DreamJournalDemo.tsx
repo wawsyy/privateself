@@ -464,10 +464,10 @@ export const DreamJournalDemo = () => {
                     className="ml-4 px-4 py-2 text-sm bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {dream.isDecrypting
-                      ? "Decrypting..."
+                      ? "FHE Decrypting..."
                       : dream.decryptedContent && showDecrypted[dream.id.toString()]
                       ? "Hide"
-                      : "Decrypt & View"}
+                      : "FHE Decrypt & View"}
                   </button>
                 </div>
                 
