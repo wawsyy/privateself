@@ -20,6 +20,7 @@ contract DreamJournal is SepoliaConfig {
     mapping(address => uint256[]) private _dreamsOf;
 
     event DreamCreated(uint256 indexed id, address indexed owner, string title, uint64 createdAt);
+    event DreamAccessed(uint256 indexed id, address indexed accessor);
 
     /// @notice Create a new dream entry
     /// @param title Plaintext title for listing
