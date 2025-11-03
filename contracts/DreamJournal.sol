@@ -22,10 +22,10 @@ contract DreamJournal is SepoliaConfig {
     event DreamCreated(uint256 indexed id, address indexed owner, string title, uint64 createdAt);
     event DreamAccessed(uint256 indexed id, address indexed accessor);
 
-    /// @notice Create a new dream entry
-    /// @param title Plaintext title for listing
+    /// @notice Create a new dream entry with FHE encrypted content
+    /// @param title Plaintext title for listing (not encrypted for discoverability)
     /// @param encContent Array of encrypted bytes (one externalEuint8 per character)
-    /// @param inputProof The input proof for the encrypted content
+    /// @param inputProof The Zama FHE input proof for the encrypted content
     /// @return id The ID of the newly created dream
     function createDream(
         string calldata title,
