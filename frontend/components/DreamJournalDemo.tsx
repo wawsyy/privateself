@@ -474,7 +474,7 @@ export const DreamJournalDemo = () => {
                 {dream.decryptedContent && showDecrypted[dream.id.toString()] && (
                   <div className="mt-4 p-4 bg-purple-50 rounded-lg border border-purple-200">
                     <p className="text-sm font-medium text-purple-800 mb-2">
-                      Decrypted Content:
+                      FHE Decrypted Content:
                     </p>
                     <p className="text-gray-700 whitespace-pre-wrap">
                       {dream.decryptedContent}
