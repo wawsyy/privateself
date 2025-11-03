@@ -490,7 +490,7 @@ export const DreamJournalDemo = () => {
       {/* FHEVM Status (Debug) */}
       {process.env.NODE_ENV === "development" && (
         <div className="bg-gray-100 rounded-lg p-4 text-xs text-gray-600">
-          <p>FHEVM Status: {fhevmStatus}</p>
+          <p>Zama FHEVM Status: {fhevmStatus}</p>
           {fhevmError && <p>Error: {fhevmError.message}</p>}
         </div>
       )}
