@@ -102,10 +102,10 @@ contract DreamJournal is SepoliaConfig {
         return _dreams[id].encContent.length > 0;
     }
 
-    /// @notice Get a single encrypted byte at a specific index
+    /// @notice Get a single FHE encrypted byte at a specific index
     /// @param id The dream ID
-    /// @param index The byte index
-    /// @return encByte The encrypted byte
+    /// @param index The byte index (corresponds to character position)
+    /// @return encByte The FHE encrypted byte as euint8
     function getDreamContentByte(uint256 id, uint256 index) external view returns (euint8 encByte) {
         Dream storage dream = _dreams[id];
         require(index < dream.encContent.length, "Index out of bounds");
