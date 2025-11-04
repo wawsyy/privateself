@@ -273,7 +273,7 @@ export const DreamJournalDemo = () => {
       <div className="mx-auto w-full max-w-2xl">
         <div className="bg-red-50 border-2 border-red-400 rounded-lg p-8">
           <h2 className="text-2xl font-bold mb-4 text-red-800">
-            FHEVM Initialization Error
+            Zama FHEVM Initialization Error
           </h2>
           <p className="text-red-700 mb-4">
             <strong>Error:</strong> {fhevmError.message}
