@@ -380,7 +380,7 @@ export const DreamJournalDemo = () => {
       {/* Create Dream Form */}
       <div className="bg-white rounded-lg shadow-lg p-6">
         <h3 className="text-xl font-semibold mb-4 text-gray-800">
-          Create New Dream
+          Create New Encrypted Dream
         </h3>
         <div className="space-y-4">
           <div>
