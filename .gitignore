@@ -17,6 +17,9 @@ tmp
 # types/ - tracked for TypeScript definitions
 # deployments/ - tracked for deployment information
 
+# Next.js build artifacts
+.next/
+
 # files
 *.env
 *.log
