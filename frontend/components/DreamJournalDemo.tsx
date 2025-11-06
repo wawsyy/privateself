@@ -269,6 +269,9 @@ export const DreamJournalDemo = () => {
 
   // Display FHEVM error if present
   if (fhevmError && fhevmStatus === "error") {
+    const isHardhat = chainId === 31337;
+    const isSepolia = chainId === 11155111;
+    
     return (
       <div className="mx-auto w-full max-w-2xl">
         <div className="bg-red-50 border-2 border-red-400 rounded-lg p-8">
@@ -278,16 +281,35 @@ export const DreamJournalDemo = () => {
           <p className="text-red-700 mb-4">
             <strong>Error:</strong> {fhevmError.message}
           </p>
+          <p className="text-red-600 mb-4 text-sm">
+            <strong>Current Network:</strong> Chain ID {chainId} {isSepolia ? "(Sepolia Testnet)" : isHardhat ? "(Hardhat Local)" : ""}
+          </p>
           <div className="bg-white p-4 rounded-lg border border-red-300">
             <p className="font-semibold text-gray-800 mb-2">Troubleshooting Steps:</p>
             <ol className="list-decimal list-inside space-y-2 text-sm text-gray-700">
-              <li>Ensure Hardhat node is running:
-                <code className="bg-gray-100 px-2 py-1 rounded ml-2">npx hardhat node</code>
-              </li>
-              <li>Verify RPC endpoint is accessible:
-                <code className="bg-gray-100 px-2 py-1 rounded ml-2">http://localhost:8545</code>
-              </li>
-              <li>Check that you're connected to Hardhat Local network (Chain ID: 31337)</li>
+              {isHardhat ? (
+                <>
+                  <li>Ensure Hardhat node is running:
+                    <code className="bg-gray-100 px-2 py-1 rounded ml-2">npx hardhat node</code>
+                  </li>
+                  <li>Verify RPC endpoint is accessible:
+                    <code className="bg-gray-100 px-2 py-1 rounded ml-2">http://localhost:8545</code>
+                  </li>
+                  <li>Check that you're connected to Hardhat Local network (Chain ID: 31337)</li>
+                </>
+              ) : isSepolia ? (
+                <>
+                  <li>Verify you're connected to Sepolia Testnet (Chain ID: 11155111)</li>
+                  <li>Check that your wallet has Sepolia ETH for gas fees</li>
+                  <li>Ensure the FHEVM relayer service is accessible (this may be a temporary service issue)</li>
+                  <li>The error "Relayer didn't response correctly. Bad JSON" suggests the relayer service may be down or unreachable</li>
+                </>
+              ) : (
+                <>
+                  <li>Check that you're connected to a supported network (Sepolia or Hardhat Local)</li>
+                  <li>Current network Chain ID: {chainId}</li>
+                </>
+              )}
               <li>Try refreshing the page</li>
               <li>Check browser console for more details</li>
             </ol>
