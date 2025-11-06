@@ -381,10 +381,10 @@ export const useDreamJournal = (parameters: {
           const handlesArray = encrypted.handles;
 
           // Safe logging
-          const firstHandle = handlesArray[0];
+          const firstHandle = handlesArray[0] as string | unknown;
           const firstHandlePreview = typeof firstHandle === 'string' 
             ? firstHandle.substring(0, 20) + "..." 
-            : String(firstHandle || 'undefined').substring(0, 30);
+            : (firstHandle != null ? String(firstHandle).substring(0, 30) : 'undefined');
 
           console.log("[createDream] Prepared handles array:", {
             arrayLength: handlesArray.length,
