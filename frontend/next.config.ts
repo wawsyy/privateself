@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  eslint: {
+    // Disable ESLint during builds to avoid root directory config conflicts
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // TypeScript errors are still checked
+    ignoreBuildErrors: false,
+  },
   headers() {
     // FHEVM requires COOP and COEP headers
     // But Base Account SDK conflicts with COOP: same-origin
